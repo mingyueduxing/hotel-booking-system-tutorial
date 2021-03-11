@@ -36,8 +36,4 @@
         "arrow-spacing":["error"],
         "max-len": ["error", { "code": 80}]
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cf9124e7958261ed23d57db607c3151faba29e9d
