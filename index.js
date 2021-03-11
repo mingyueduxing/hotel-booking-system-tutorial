@@ -5,6 +5,6 @@ const app = express()
 
 app.use('/api', routes)
 
-app.listen('8080', () => {
-	console.log('App started at PORT 8080')
+app.listen('3000', () => {
+	console.log('App started at PORT 3000')
 })
