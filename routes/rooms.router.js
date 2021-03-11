@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-	res.send('room by id api reponse')
+	res.send('room by id api')
 });
 
 router.post('/', (req, res) => {
-	res.send('create room api reponse')
+	res.send('create room api response')
 });
 
 module.exports = router;
