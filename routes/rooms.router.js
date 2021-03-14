@@ -1,4 +1,5 @@
 const express = require('express');
+const { rooms } = require('../models');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	res.send('create room api reponse')
+	rooms.create(req.body).then(data => res.send(data))
 });
 
 module.exports = router;
