@@ -1,7 +1,17 @@
 # Hotel booking system tutorial
 
-# tasks to do
- - add eslint rule
-    - max-len(max 80)
- - add route
-    - /users - get all users
+## connect to db
+setup mysql in docker
+`docker compose up -d`
+
+`docker ps`
+
+`docker exec -it 3b75aa4a9bfa mysql -u root -p`
+
+`docker build -t jackietian/hotel-booking-system-backend-api .`
+
+## add db models
+    - hotel
+    - rooms
+    - reservations
+    - users
