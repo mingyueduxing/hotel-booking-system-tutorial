@@ -1,7 +1,7 @@
 const express = require('express')
 const hotel = require('./hotel.router')
 const rooms = require('./rooms.router')
-const reservations = require('./reservations.router'),
+const reservations = require('./reservations.router')
 const user = require("./user.router")
 
 const router = express.Router()
