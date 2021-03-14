@@ -1,8 +1,8 @@
 # Hotel booking system tutorial
 
 ## connect to db
-setup mysql in docker
-`docker compose up -d`
+setup mysql in docker \
+`docker-compose up -d`
 
 `docker ps`
 
