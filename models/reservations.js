@@ -1,25 +1,31 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./sequelize');
 
-const hotel = sequelize.define('hotel', {
-	name: {
+const reservation = sequelize.define('reservation', {
+	firstName: {
 		type: DataTypes.STRING,
 	},
-	country: {
+	lastName: {
 		type: DataTypes.STRING,
 	},
-	city: {
+	roomId: {
 		type: DataTypes.STRING,
 	},
-	street: {
+	checkin: {
+		type: DataTypes.DATE,
+	},
+	checkout: {
+		type: DataTypes.DATE,
+	},
+	status: {
 		type: DataTypes.STRING,
 	},
-	email: {
+	notes: {
 		type: DataTypes.STRING,
 	},
-	phone: {
+	payment: {
 		type: DataTypes.STRING,
 	},
 });
 
-module.exports = hotel;
+module.exports = reservation;
