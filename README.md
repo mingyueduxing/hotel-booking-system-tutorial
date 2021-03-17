@@ -8,10 +8,10 @@
 ![database design](./docs/hotelBookingSystemDB.png?raw=true "system database design")
 
 
-## [Backend(express)](./backend/README.md)
+## [Backend(express)](./backend)
 
-## [Frontend(property)](./frontend/property/README.md)
+## [Frontend(property)](./frontends/property)
 
-## [Frontend(admin)](./frontend/admin/README.md)
+## [Frontend(admin)](./frontends/admin)
 
 
