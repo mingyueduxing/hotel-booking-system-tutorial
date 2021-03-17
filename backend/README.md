@@ -1,7 +1,8 @@
-# Hotel booking system tutorial
+# APIs
 
-## setup mysql in docker
-`docker-compose up -d`
+## setup local dev
+`docker-compose up -d`\
+`npm i & npm start`
 
 ## get containers
 `docker ps`

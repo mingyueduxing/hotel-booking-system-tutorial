@@ -8,13 +8,10 @@
 ![database design](./docs/hotelBookingSystemDB.png?raw=true "system database design")
 
 
-## Backend(express)
+## [Backend(express)](./backend/README.md)
 
+## [Frontend(property)](./frontend/property/README.md)
 
-## Frontend(property)
-Guest facing hotel website
-
-## Frontend(admin)
-Hotel management system for staff users
+## [Frontend(admin)](./frontend/admin/README.md)
 
 
