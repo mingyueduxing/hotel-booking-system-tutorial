@@ -1,17 +1,12 @@
-# Hotel booking system tutorial
+# Hotel booking system based on React and Express
 
-## connect to db
-setup mysql in docker \
-`docker-compose up -d`
+## Backend(express)
 
-`docker ps`
 
-`docker exec -it 3b75aa4a9bfa mysql -u root -p`
+## Frontend(property)
+Guest facing hotel website
 
-`docker build -t jackietian/hotel-booking-system-backend-api .`
+## Frontend(admin)
+Hotel management system for staff users
 
-## add db models
-    - hotel
-    - rooms
-    - reservations
-    - users
+
