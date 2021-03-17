@@ -1,5 +1,8 @@
 # Hotel booking system based on React and Express
 
+## Achitecture design
+![system architecture](./docs/architecture.png?raw=true "system architecture")
+
 ## Backend(express)
 
 
