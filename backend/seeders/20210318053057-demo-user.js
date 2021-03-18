@@ -12,29 +12,11 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-
-    return queryInterface.bulkInsert('Rooms', [{
+    return queryInterface.bulkInsert('Users', [{
       id: uuidv4(),
-      name: 'single room',
-      roomId: '101',
-      type: 'Single Room',
-      price: '100',
-      createdAt: '2020-01-01',
-      updatedAt: '2020-01-01'
-    },{
-      id: uuidv4(),
-      name: 'single room',
-      roomId: '102',
-      type: 'Single Room',
-      price: '100',
-      createdAt: '2020-01-01',
-      updatedAt: '2020-01-01'
-    },{
-      id: uuidv4(),
-      name: 'double room',
-      roomId: '103',
-      type: 'Double Room',
-      price: '100',
+      username: 'admin',
+      password: '123456',
+      role: 'admin',
       createdAt: '2020-01-01',
       updatedAt: '2020-01-01'
     }]);
@@ -47,6 +29,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Rooms', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
   }
 };

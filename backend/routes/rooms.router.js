@@ -1,18 +1,18 @@
 const express = require('express');
-const { rooms } = require('../models');
+const { Room } = require('../models');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	res.send('rooms api reponse')
+	Room.findAll().then(data => res.json(data))
 });
 
 router.get('/:id', (req, res) => {
-	res.send('room by id api reponse')
+	Room.findOne({where: {roomId: req.params.id}, include: 'Images'}).then(data => res.json(data))
 });
 
 router.post('/', (req, res) => {
-	rooms.create(req.body).then(data => res.send(data))
+	rooms.create(req.body).then(data => res.json(data))
 });
 
 module.exports = router;

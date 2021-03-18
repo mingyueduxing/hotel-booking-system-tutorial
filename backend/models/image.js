@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
+
 module.exports = (sequelize, DataTypes) => {
   class Image extends Model {
     /**
@@ -26,5 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Image',
   });
+
+  Image.beforeCreate(image => image.id = uuidv4())
   return Image;
 };

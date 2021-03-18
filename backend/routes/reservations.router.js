@@ -1,9 +1,10 @@
 const express = require('express');
+const { Reservation } = require('../models')
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	res.send('resevations api reponse')
+	Reservation.findAll().then(data => res.json(data))
 });
 
 module.exports = router;

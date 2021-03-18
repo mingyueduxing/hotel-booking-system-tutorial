@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
+
 module.exports = (sequelize, DataTypes) => {
   class Hotel extends Model {
     /**
@@ -28,5 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Hotel',
   });
+
+  Hotel.beforeCreate(hotel => hotel.id = uuidv4())
   return Hotel;
 };

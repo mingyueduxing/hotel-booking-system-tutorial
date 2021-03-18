@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
+
 module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
     /**
@@ -12,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Reservation, Image }) {
       // define association here
       this.hasMany(Reservation, { foreignKey: 'roomId'})
-      this.hasMany(Image, { foreignKey: 'roomId'})
+      this.hasMany(Image, { foreignKey: 'roomId', sourceKey: 'roomId'})
     }
   };
   Room.init({
@@ -29,5 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Room',
   });
+
+  Room.beforeCreate(room => room.id = uuidv4())
   return Room;
 };

@@ -1,14 +1,15 @@
 const express = require('express');
-const { Hotel } = require('../models')
+const { User } = require('../models')
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	Hotel.findAll().then(data => res.json(data))
+  User.findAll().then(data => res.json(data))
 });
 
 router.post('/', (req, res) => {
-	Hotel.create(req.body).then(data => res.json(data))
+  console.log(req.body)
+  User.create(req.body).then(data => res.json(data))
 });
 
 module.exports = router;
