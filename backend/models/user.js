@@ -29,17 +29,16 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     hooks: {
       beforeCreate: (user) => {
-        const salt = bcrypt.genSaltSync();
-        user.password = bcrypt.hashSync(user.password, salt);
+        const salt = bcrypt.genSaltSync()
+        user.password = bcrypt.hashSync(user.password, salt)
         user.id = uuidv4()
-      }
-    },
-    instanceMethods: {
-      validPassword: function (password) {
-        return bcrypt.compareSync(password, this.password);
       }
     }
   });
+
+  User.prototype.validatePassword = (password, encrypted) => {
+    return bcrypt.compareSync(password, encrypted)
+  };
 
   return User;
 };

@@ -1,13 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const helmet = require('helmet')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes')
 const { sequelize } = require('./models')
 
 const app = express()
-app.use(bodyParser())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(helmet())
 app.use(cors())
