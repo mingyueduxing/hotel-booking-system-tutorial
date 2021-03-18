@@ -1,7 +1,8 @@
+import Reviews from './Reviews';
 const Home = () => {
     return (
         <main>
-            main
+            <Reviews />
         </main>
     )
 }
