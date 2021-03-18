@@ -1,7 +1,9 @@
+import Comment from './Comment'
+
 const Home = () => {
     return (
         <main>
-            main
+            <Comment />
         </main>
     )
 }
