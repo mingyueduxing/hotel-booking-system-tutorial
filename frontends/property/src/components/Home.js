@@ -1,8 +1,9 @@
-import Reviews from './Reviews';
+import Testimonials from './Testimonials'
+
 const Home = () => {
     return (
         <main>
-            <Reviews />
+            <Testimonials />
         </main>
     )
 }
