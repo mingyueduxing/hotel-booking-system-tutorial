@@ -16,7 +16,7 @@ const Carousel = () => {
 
     return <section className="carousel">
         <ul>
-            {images.map((image, index) => (index === currentImageIndex && <li key={image.id}><img src={image.url} alt={image.name} /></li>))}
+            {images.map((image, index) => (index === currentImageIndex && <li key={image.id}><img src={image.url} alt='hotel banner images' /></li>))}
         </ul>
         <ul>
             {images.map((image, index) => <li key={image.id} onClick={() => setCurrentImageIndex(index)}></li>)}
