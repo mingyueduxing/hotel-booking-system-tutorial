@@ -1,8 +1,13 @@
 # APIs
+## setup db
+`docker compose up -d`\
+`npm i -g sequelize-cli ` \
+`sequelize db:create`\
+`sequelize db:migrate`\
+`sequelize db:seed:all`
 
 ## setup local dev
-`docker-compose up -d`\
-`npm i & npm start`
+`npm run dev`
 
 ## get containers
 `docker ps`
