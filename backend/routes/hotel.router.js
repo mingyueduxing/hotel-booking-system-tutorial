@@ -4,7 +4,7 @@ const { Hotel } = require('../models')
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	Hotel.findAll().then(data => res.json(data))
+	Hotel.findOne().then(data => res.json(data))
 });
 
 router.post('/', (req, res) => {

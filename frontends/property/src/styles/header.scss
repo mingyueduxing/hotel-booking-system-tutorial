@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    margin: 1rem 0;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        nav {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            li {
+                padding: 0 1rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+    
+}
