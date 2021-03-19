@@ -1,0 +1,25 @@
+main {
+	section.carousel {
+		ul:nth-child(2) {
+			li {
+				color: transparent;
+				&:hover {
+					background: transparent;
+					background: radial-gradient(
+						circle at center,
+						#fff 0,
+						transparent 50%
+					);
+				}
+				&.carousel-active {
+					background: radial-gradient(
+						circle at center,
+						transparent 50%,
+						white 70%,
+						white 100%
+					);
+				}
+			}
+		}
+	}
+}
