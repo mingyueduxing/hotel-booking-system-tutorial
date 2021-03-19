@@ -1,12 +1,12 @@
 import Carousel from './common/Carousel'
-import BookingForm from './common/BookingForm'
+import Orderform from './common/orderform'
 import Testimonial from './common/Testimonial'
 
 const Home = () => {
     return (
         <main>
             <Carousel />
-            <BookingForm />
+            <Orderform />
             <Testimonial />
         </main>
     )

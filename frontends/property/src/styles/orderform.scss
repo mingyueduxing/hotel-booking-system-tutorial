@@ -1,0 +1,84 @@
+.Audlts {
+    display: inline;
+    padding:10px;
+    
+
+}
+
+
+.bookform {
+    margin-left: 25%;
+    border: 2px black double;
+    background-color: white;
+    width:800px;
+    height: 200px;
+    position: relative;
+   
+    ul li {
+        display: inline;
+        padding:10px;
+        margin: 10px;
+        width:20%;
+        font-size: 30px;
+        text-align: center;
+        line-height: 200px;
+        border-right: silver 1.5px double;
+    }
+
+    &-checkin {
+        position: absolute;
+        display: inline;
+        font-size: 12px;
+        top: -4em;
+        left:1em;
+        
+    }
+
+    &-checkout {
+        position: absolute;
+        display: inline;
+        font-size: 12px;
+        top: -4em;
+        left:12em;
+        
+    }
+
+    &-checkaudlt {
+        position: absolute;
+        display: inline;
+        font-size: 12px;
+        top: -4em;
+        left:25em;
+        
+    }
+
+    &-checkchildren {
+        position: absolute;
+        display: inline;
+        font-size: 12px;
+        top: -4em;
+        left:32em;
+        
+    }
+
+
+
+    
+    &_button {
+        margin: 10px;
+        &:hover {
+            opacity: 0.8;
+            
+        }
+
+        &:active {
+            background-color: white;
+
+
+
+
+        }
+    }
+
+    
+}
