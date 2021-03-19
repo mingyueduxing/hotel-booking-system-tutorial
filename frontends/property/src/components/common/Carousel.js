@@ -1,8 +1,3 @@
-import {
-	faChevronLeft,
-	faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import "../../styles/carousel.scss";
 
@@ -47,8 +42,6 @@ const Carousel = () => {
 					></li>
 				))}
 			</ul>
-			<FontAwesomeIcon icon={faChevronLeft} />
-			<FontAwesomeIcon icon={faChevronRight} />
 		</section>
 	);
 };
