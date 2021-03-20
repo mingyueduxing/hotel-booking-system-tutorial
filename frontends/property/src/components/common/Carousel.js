@@ -20,11 +20,7 @@ const Carousel = () => {
 					resetRef.current = false;
 					return prev;
 				}
-				if (prev < maxImageIndex) {
-					return 1 + prev;
-				} else {
-					return 0;
-				}
+				return prev < maxImageIndex ? 1 + prev : 0;
 			});
 		}, 15000);
 		return () => clearInterval(imagesScroller);
