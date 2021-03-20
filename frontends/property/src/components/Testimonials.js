@@ -36,7 +36,7 @@ const Testimonials = () => {
       <span>our hotel's guest:</span>
       <ul>
         {TESTIMONIALS_LIST.map((item) => (
-          <li>
+          <li key={item.id}>
             <TestimonialItem key={item.id} image={item.img} comment={item.comment} author={item.author} />
           </li>
         ))}

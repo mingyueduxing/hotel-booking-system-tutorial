@@ -1,99 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Roboto:wght@100&display=swap');
-$M:768px;
-
-@mixin MQ($canvas){
-  @if $canvas==S{
-      @media only screen and (max-width:$M){
-          @content;
-      }
-  }
-  @else if $canvas==M{
-      @media only screen and (min-width:$M+1){
-          @content;
-      }
-  }
-}
+@import './responsive.scss';
+@import './variables.scss';
 
 main {
     padding: 1rem;
+    section{
+      &--testimonials {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        p:first-child {
+          font-family:Roboto;
+          text-transform:uppercase;
+          font-size:1.2rem;
+          padding:1rem;
+          @include MQ(smallScreen){
+            font-size:1rem;
+          }
+        }
+        span{
+          font-family:Lora;
+          text-transform:capitalize;
+          font-size:3rem;
+          @include MQ(smallScreen){
+            font-size:1.7rem;
+          }
+        }
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width:82rem;
+          margin-bottom:3rem;
+          padding:1rem;
+          @include MQ(smallScreen){
+            flex-direction:column;
+            padding:0.6rem;
+          }
+          li {
+            @include MQ(smallScreen){
+              max-width:100%;
+            }
+            @include MQ(largeScreen){
+              max-width:33.33%;
+            }
+          }
+        }
+        .testimonialItem {
+          display:flex;
+          flex-direction:column;
+          align-items: center;
+          padding:2rem;
+          img{
+            display:block;
+            width:6rem;
+            height:6rem;
+            border-radius:50%;
+            margin-bottom:2rem;
+          }
+          p {
+            color: #BEBEBE;
+            font-size:1.4rem;
+            margin-bottom:2rem;
+            @include MQ(smallScreen){
+              font-size:1.2rem;
+            }
+          }
+          h2{
+            color:black;
+            font-size:1.2rem;
+            @include MQ(smallScreen){
+              font-size:1rem;
+            }
+          }
+        }
+      }
+    }
 }
 
-.testimonials{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  p:first-child {
-    font-family:Roboto;
-    text-transform:uppercase;
-    font-size:1.2rem;
-    padding:1rem;
-    @include MQ(S){
-      font-size:1rem;
-    }
-  }
-  span{
-    font-family:Lora;
-    text-transform:capitalize;
-    font-size:3rem;
-    @include MQ(S){
-      font-size:1.7rem;
-    }
-  }
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width:1300px;
-    margin-bottom:3rem;
-    padding:1rem;
-    @include MQ(S){
-      flex-direction:column;
-      padding:0.6rem;
-    }
-    li {
-      @include MQ(S){
-        max-width:100%;
-      }
-      @include MQ(M){
-        max-width:33.33%;
-      }
-    }
-  }
-  button {
-    width: 16em;
-    display: block;
-    margin: 0 auto;
-    color: #c19b76;
-    background-color: white;
-}
-}
 
-.testimonialItem {
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  padding:2rem;
-  img{
-    display:block;
-    width:96px;
-    height:96px;
-    border-radius:50%;
-    margin-bottom:2rem;
-  }
-  p {
-    color: rgb(190, 190, 190);
-    font-size:1.4rem;
-    margin-bottom:2rem;
-    @include MQ(S){
-      font-size:1.2rem;
-    }
-  }
-  h2{
-    color:black;
-    font-size:1.2rem;
-    @include MQ(S){
-      font-size:1rem;
-    }
-  }
-}
