@@ -1,9 +1,13 @@
-import Testimonials from './Testimonials';
+import Carousel from './common/Carousel'
+import BookingForm from './common/BookingForm'
+import Testimonial from './common/Testimonial'
 
 const Home = () => {
     return (
         <main>
-        <Testimonials />
+            <Carousel />
+            <BookingForm />
+            <Testimonial />
         </main>
     )
 }

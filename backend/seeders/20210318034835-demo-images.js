@@ -15,7 +15,7 @@ module.exports = {
 
     return queryInterface.bulkInsert('Images', [{
       id: uuidv4(),
-      url: 'https://ld-wp.template-help.com/wordpress_61155_v1/wp-content/uploads/2016/11/slide-2.jpg',
+      url: 'https://ld-wp.template-help.com/wordpress_61155_v1/wp-content/uploads/2016/11/slide-1.jpg',
       type: 'hotel',
       createdAt: '2020-01-01',
       updatedAt: '2020-01-01'
