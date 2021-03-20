@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../../styles/carousel.scss";
 
 const Carousel = () => {
 	const [images, setImages] = useState([]);
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [maxImageIndex, setMaxImageIndex] = useState(0);
+	const resetRef = useRef(false);
 
 	useEffect(() => {
 		fetch("http://localhost:3000/api/images/type/hotel")
@@ -14,12 +15,23 @@ const Carousel = () => {
 				setMaxImageIndex(data.length - 1);
 			});
 		const imagesScroller = setInterval(() => {
-			setCurrentImageIndex((prev) => (prev < maxImageIndex ? prev + 1 : 0));
+			setCurrentImageIndex((prev) => {
+				if (resetRef.current) {
+					resetRef.current = false;
+					return prev;
+				}
+				if (prev < maxImageIndex) {
+					return 1 + prev;
+				} else {
+					return 0;
+				}
+			});
 		}, 15000);
 		return () => clearInterval(imagesScroller);
 	}, []);
 
 	const handleRadioClick = (e) => {
+		resetRef.current = true;
 		setCurrentImageIndex(e.target.value);
 	};
 
