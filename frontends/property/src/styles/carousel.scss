@@ -1,49 +1,40 @@
 section.carousel {
-    position: relative;
-    margin-top: -0.9rem;
-    overflow: hidden;
-    ul {
-        li {
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-    }
+	ul:nth-child(1) {
+		li {
+			img {
+				animation: blur 2s;
+			}
+		}
+	}
+	ul:nth-child(2) {
+		li {
+			&:hover {
+				background: transparent;
+				background: radial-gradient(circle at center, #fff 0, transparent 50%);
+			}
+			&.carousel-active {
+				background: radial-gradient(
+					circle at center,
+					transparent 50%,
+					white 70%,
+					white 100%
+				);
+			}
+		}
+	}
+}
 
-    ul:nth-child(2) {
-        position: absolute;
-        bottom: 3rem;
-        left: 40%;
-        display: flex;
-        flex-direction: row;
-        color: #fff;
-
-        li {
-            margin: 0 1rem;
-            background: #fff;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            color: transparent;
-            
-            &:hover {
-                background: transparent;
-                background: radial-gradient(
-                    circle at center,
-                    #fff 0,
-                    transparent 50%
-                );
-            }
-            &.carousel-active {
-                background: radial-gradient(
-                    circle at center,
-                    transparent 50%,
-                    white 70%,
-                    white 100%
-                );
-            }
-        }
-    }
+@keyframes blur {
+	0% {
+		-webkit-filter: blur(10px);
+		-moz-filter: blur(10px);
+		-o-filter: blur(10px);
+		-ms-filter: blur(10px);
+	}
+	100% {
+		-webkit-filter: blur(0px);
+		-moz-filter: blur(0px);
+		-o-filter: blur(0px);
+		-ms-filter: blur(0px);
+	}
 }

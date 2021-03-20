@@ -4,22 +4,26 @@ import "../../styles/carousel.scss";
 const Carousel = () => {
 	const [images, setImages] = useState([]);
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+	const [maxImageIndex, setMaxImageIndex] = useState(0);
 
 	useEffect(() => {
 		fetch("http://localhost:3000/api/images/type/hotel")
 			.then((data) => data.json())
-			.then((data) => setImages(data));
+			.then((data) => {
+				setImages(data);
+				setMaxImageIndex(data.length - 1);
+			});
+		const imagesScroller = setInterval(() => {
+			setCurrentImageIndex((prev) => (prev < maxImageIndex ? prev + 1 : 0));
+		}, 15000);
+		return () => clearInterval(imagesScroller);
 	}, []);
 
-	if (!images) return <h1>...Loading</h1>;
 	const handleRadioClick = (e) => {
-		const deactive = document.getElementsByClassName("carousel-active");
-		if (deactive.length > 0) {
-			deactive[0].classList.remove("carousel-active");
-		}
 		setCurrentImageIndex(e.target.value);
-		e.target.classList.add("carousel-active");
 	};
+
+	if (!images) return <h1>...Loading</h1>;
 
 	return (
 		<section className='carousel'>
@@ -39,6 +43,7 @@ const Carousel = () => {
 						key={image.id}
 						value={index}
 						onClick={(e) => handleRadioClick(e)}
+						className={currentImageIndex === index ? "carousel-active" : null}
 					></li>
 				))}
 			</ul>
