@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+.calendar-list {
+    &__header {
+        padding: 1rem 0;
+        text-transform: uppercase;
+        background: $grey-color;
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            li {
+                border-right: none;
+                svg {
+                    margin: 0 1rem;
+                }
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+
+        div.calendar {
+            &:first-child {
+                border-right: 1px solid lightgrey;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                li {
+                    margin: 1rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

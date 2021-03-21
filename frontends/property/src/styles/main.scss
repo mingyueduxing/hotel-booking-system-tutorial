@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 main {
+    position: relative;
     section {
         text-align: center;
         border-bottom: 1px solid $grey-color;
@@ -38,7 +39,7 @@ main {
     
             ul:nth-child(2) {
                 position: absolute;
-                bottom: 3rem;
+                bottom: 10rem;
                 left: 45%;
                 display: flex;
                 flex-direction: row;
@@ -76,15 +77,6 @@ main {
                     cursor: not-allowed;
                     color: $disabled-color;
                 }
-            }
-        }
-
-        &.section--booking-form {
-            position: absolute;
-            ul {
-                display: flex;
-                flex-direction: row;
-                width: 50%;
             }
         }
 
@@ -164,6 +156,53 @@ main {
                             left: -1rem;
                         }
                     }
+                }
+            }
+        }
+
+        &.section--booking-form {
+            position: absolute;
+            top: 53rem;
+            background: $white;
+            display: flex;
+            flex-direction: row;
+            left: 25%;
+            width: 80rem;
+            
+            > ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+                align-items: center;
+                position: relative;
+
+                > li {
+                    padding: 2rem;
+                    border-right: 2px solid $grey-color;
+                    text-transform: uppercase;
+                    position: relative;
+
+                    h1 {
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        cursor: pointer;
+                        svg {
+                            margin-left: 1rem;
+                        }
+                    }
+
+                }
+                div.modal {
+                    position: absolute;
+                    left: 0;
+                    width: 60rem;
+                    height: 30rem;
+                    top: 10rem;
+                    background: $white;
+                    border: 1px solid $black;
                 }
             }
         }
