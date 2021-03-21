@@ -163,11 +163,12 @@ main {
         &.section--booking-form {
             position: absolute;
             top: 53rem;
-            background: $white;
-            display: flex;
-            flex-direction: row;
-            left: 25%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
             width: 80rem;
+            background: $white;
             
             > ul {
                 display: flex;
