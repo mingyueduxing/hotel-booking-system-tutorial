@@ -26,16 +26,28 @@
 
         &.number-dropdown {
             width: 100%;
+
+            ul {
+                li {
+                    padding: 1rem;
+                    border-bottom: 1px solid $grey-color;
+                    cursor: pointer;
+    
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
         }
 
         &.showCustomDropdown {
             position: absolute;
-            background: grey;
+            background: white;
+            border: 1px solid $grey-color;
         }
 
         &.hideCustomDropdown {
             display: none;
         }
-        
     }
 }
