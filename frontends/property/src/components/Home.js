@@ -1,13 +1,13 @@
 import Carousel from './common/Carousel'
 import BookingForm from './common/BookingForm'
 import Testimonial from './common/Testimonial'
-import RoomSection from './common/RoomSection';
+import RoomsList from './common/RoomsList'
 
 const Home = () => {
     return (
         <main>
             <Carousel />
-            <RoomSection />
+            <RoomsList />
             <BookingForm />
             <Testimonial />
         </main>

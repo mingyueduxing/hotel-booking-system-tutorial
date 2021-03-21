@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const RoomSection = () => {
+const RoomsList = () => {
 	const [rooms, setRooms] = useState([]);
 	const [roomId, setRoomId] = useState('');
 	const [images, setImages] = useState([]);
@@ -19,22 +19,36 @@ const RoomSection = () => {
 			.then(response => response.json())
 			.then(data => setImages(data)); 
 		})
-	}, [roomId])
+	}, [roomId]);
 
-	return (
-		<section className='roomsInfo'>
-			{rooms.map(room => (
+	function renderRoomImage(){
+		return (
+			<ul>
+				{images.map(image => (<li key={image.id}><img src={image.url} alt="roomImage"/></li>))}
+			</ul>
+		)
+	}
+
+	function renderRoomItem(){
+		return (
+			<>
+			{rooms.map(roomItem => (
 				<ul>
-					<ul>
-						{images.map(image => (<li key={image.id}><img src={image.url}/></li>))}
-					</ul>
-					<li key={room.type}>{room.type}</li>
-					<li key={room.price}>{room.price}</li>
-					<li key='button'><button>book now!</button></li>
+					{renderRoomImage()}
+					<li key={roomItem.type}>{roomItem.type}</li>
+					<li key={roomItem.price}>{roomItem.price}</li>
+					<button key='button'>book now!</button>
 				</ul>
 			))}
+			</>
+		)
+	}
+
+	return (
+		<section className='roomsList'>
+			{renderRoomItem()}
 		</section>
 	)
 }
 
-export default RoomSection;
+export default RoomsList;

@@ -29,18 +29,22 @@ main {
     }
   }
 
-  section.roomsInfo {
+  section.roomsList {
     width: 80%;
+    height: 20rem;
     margin: auto;
     display: flex;
+    align-items: center;
 
     > ul {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 0.5rem;
+      height: 70%;
 
-      > ul {
+      ul {
         display: flex;
-        align-items: center;
 
         li {
           background: whitesmoke;
@@ -52,9 +56,10 @@ main {
         }
       }
 
-      li {
-        margin-top: 0.5rem;
-
+      > li {
+        &:nth-child(2) {
+          font-weight: bold;
+        }
         &:nth-child(3) {
           font-size: 2rem;
 
@@ -74,6 +79,7 @@ main {
       }
 
       button {
+        width: 60%;
         font-size: 0.5rem;
         padding: 0.5rem;
       }
