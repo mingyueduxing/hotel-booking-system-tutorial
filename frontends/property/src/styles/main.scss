@@ -2,7 +2,7 @@
 
 main {
     section {
-        &.carousel {
+        &.section--carousel {
             position: relative;
             ul:first-child {
                 li {
@@ -53,6 +53,15 @@ main {
                     cursor: not-allowed;
                     color: $disabled-color;
                 }
+            }
+        }
+
+        &.section--booking-form {
+            position: absolute;
+            ul {
+                display: flex;
+                flex-direction: row;
+                width: 50%;
             }
         }
     }

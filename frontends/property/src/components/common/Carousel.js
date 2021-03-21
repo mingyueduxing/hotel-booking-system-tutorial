@@ -30,7 +30,7 @@ const Carousel = ({ images, loading, error }) => {
     if (loading) return <h1>...Loading</h1>
     if (error) return <h1>...Something wrong happend</h1>
 
-    return <section className="carousel">
+    return <section className="section--carousel">
         <ul>
             {images.map((image, index) => (
                 index === currentImageIndex &&
