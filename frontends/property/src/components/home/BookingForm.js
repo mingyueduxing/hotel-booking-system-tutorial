@@ -1,4 +1,4 @@
-import Calendar from "./Calendar";
+import Calendar from "../common/Calendar";
 
 const BookingForm = () => <section className="section--booking-form">
     <ul>

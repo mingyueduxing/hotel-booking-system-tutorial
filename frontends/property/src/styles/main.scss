@@ -2,6 +2,29 @@
 
 main {
     section {
+        text-align: center;
+        border-bottom: 1px solid $grey-color;
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.72;
+            font-family: Roboto, sans-serif;
+            color: #777777;
+        }
+
         &.section--carousel {
             position: relative;
             ul:first-child {
@@ -66,18 +89,7 @@ main {
         }
 
         &.section--testimonial {
-            text-align: center;
             padding: 5rem 0;
-            h1 {
-                font-size: 3rem;
-                margin-bottom: 2rem;
-            }
-
-            h2 {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-                text-transform: uppercase;
-            }
 
             button {
                 margin-top: 2rem;
@@ -98,20 +110,58 @@ main {
                     }
 
                     p {
-                        margin-bottom: 2rem;
-                        font-style: normal;
-                        font-weight: 300;
-                        font-size: 1rem;
-                        line-height: 1.72;
-                        font-family: Roboto, sans-serif;
-                        color: #777777;
-
                         &:last-child {
                             font-weight: 600;
                             &::before {
                                 content: '-';
                                 margin-right: 0.5rem;
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.section--rooms-suites {
+            padding: 5rem 0;
+            background: $grey-color;
+            
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+                li {
+                    text-align: left;
+                    img {
+                        width: 23rem;
+                        height: 17rem;
+                    }
+
+                    h3 {
+                        font-size: 3rem;
+                        margin: 1rem 0;
+                    }
+
+                    p {
+                        font-size: 4rem;
+                        position: relative;
+                        margin-left: 1rem;
+                        font-weight: 400;
+                        color: $black;
+
+                        &::after {
+                            content: '/per night';
+                            font-size: 1rem;
+                            text-decoration: dotted;
+                        }
+
+                        &::before {
+                            content: '$';
+                            font-size: 2rem;
+                            position: absolute;
+                            top: 0;
+                            left: -1rem;
                         }
                     }
                 }

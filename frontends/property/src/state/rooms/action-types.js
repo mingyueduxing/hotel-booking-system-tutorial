@@ -1,0 +1,7 @@
+const actionTypes = {
+    LOAD_ROOMS_REQUESTED: "LOAD_ROOMS_REQUESTED",
+    LOAD_ROOMS_SUCCEEDED: "LOAD_ROOMS_SUCCEEDED",
+    LOAD_ROOMS_FAILED: "LOAD_ROOMS_FAILED",
+}
+
+export default actionTypes

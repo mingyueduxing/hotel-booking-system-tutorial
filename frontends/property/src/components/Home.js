@@ -1,10 +1,9 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
-import Carousel from './common/Carousel'
-import BookingForm from './common/BookingForm'
-import Testimonial from './common/Testimonial'
+import Carousel from './home/Carousel'
+import Testimonial from './home/Testimonial'
 import { loadImages } from '../state/images/actions'
-import Calendar from './common/Calendar'
+import RoomSuites from './home/RoomSuites'
 
 const Home = ({ loadImages }) => {
     useEffect(loadImages)
@@ -12,16 +11,16 @@ const Home = ({ loadImages }) => {
     return (
         <main>
             <Carousel />
-            {/* <BookingForm /> */}
+            <RoomSuites />
             <Testimonial />
         </main>
     )
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = () => ({})
 
 const mapActionsToProps = {
-    loadImages
+    loadImages,
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(Home)
