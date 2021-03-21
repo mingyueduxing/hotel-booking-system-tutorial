@@ -4,6 +4,7 @@ import Carousel from './common/Carousel'
 import BookingForm from './common/BookingForm'
 import Testimonial from './common/Testimonial'
 import { loadImages } from '../state/images/actions'
+import RoomsList from './common/RoomsList'
 
 const Home = ({ loadImages }) => {
     useEffect(loadImages)
@@ -11,6 +12,7 @@ const Home = ({ loadImages }) => {
     return (
         <main>
             <Carousel />
+            <RoomsList />
             <BookingForm />
             <Testimonial />
         </main>
