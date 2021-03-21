@@ -1,0 +1,12 @@
+.calendar {
+	&--header {
+		padding: 1rem 0;
+		text-transform: uppercase;
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+}

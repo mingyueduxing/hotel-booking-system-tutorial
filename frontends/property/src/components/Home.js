@@ -1,26 +1,28 @@
-import { useEffect } from 'react'
-import { connect } from 'react-redux'
-import Carousel from './home/Carousel'
-import Testimonial from './home/Testimonial'
-import { loadImages } from '../state/images/actions'
-import RoomSuites from './home/RoomSuites'
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import Carousel from "./home/Carousel";
+import Testimonial from "./home/Testimonial";
+import { loadImages } from "../state/images/actions";
+import RoomSuites from "./home/RoomSuites";
+import BookingForm from "./home/BookingForm";
 
 const Home = ({ loadImages }) => {
-    useEffect(loadImages)
+	useEffect(loadImages);
 
-    return (
-        <main>
-            <Carousel />
-            <RoomSuites />
-            <Testimonial />
-        </main>
-    )
-}
+	return (
+		<main>
+			<Carousel />
+			<BookingForm />
+			<RoomSuites />
+			<Testimonial />
+		</main>
+	);
+};
 
-const mapStateToProps = () => ({})
+const mapStateToProps = () => ({});
 
 const mapActionsToProps = {
-    loadImages,
-}
+	loadImages,
+};
 
-export default connect(mapStateToProps, mapActionsToProps)(Home)
+export default connect(mapStateToProps, mapActionsToProps)(Home);

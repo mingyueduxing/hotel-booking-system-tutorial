@@ -1,12 +1,16 @@
-const Calendar = () => (
-    <div className="calendar">
-        <div className="calendar__header">
-            header
-        </div>
-        <div className="calendar__content">
-            content
-        </div>
-    </div>
-)
+const Calendar = () => {
+	return (
+		<>
+			<div className='calendar__header'>
+				<ul>
+					{weekdays.map((item, index) => (
+						<li keys={index}> {item}</li>
+					))}
+				</ul>
+			</div>
+		</>
+	);
+};
 
-export default Calendar
+const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+export default Calendar;
