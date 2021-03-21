@@ -1,7 +1,8 @@
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Header = () => <header>
-    <h1>hotel name</h1>
+const Header = ({ name }) => <header>
+    <h1>{name}</h1>
     <section>
         <nav>
             <li><Link to="/">home</Link></li>
@@ -11,4 +12,11 @@ const Header = () => <header>
     </section>
 </header>
 
-export default Header
+const mapStateToProps = (state) => {
+    const { hotel: { hotel: { name } } } = state
+    return {
+        name
+    }
+}
+
+export default connect(mapStateToProps, {})(Header)
