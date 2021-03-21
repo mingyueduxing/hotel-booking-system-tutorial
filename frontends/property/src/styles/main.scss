@@ -169,42 +169,13 @@ main {
             margin-right: auto;
             width: 80rem;
             background: $white;
-            
+            padding: 2rem 0;
+
             > ul {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
-                width: 100%;
                 align-items: center;
-                position: relative;
-
-                > li {
-                    padding: 2rem;
-                    border-right: 2px solid $grey-color;
-                    text-transform: uppercase;
-                    position: relative;
-
-                    h1 {
-                        font-size: 1rem;
-                    }
-
-                    p {
-                        cursor: pointer;
-                        svg {
-                            margin-left: 1rem;
-                        }
-                    }
-
-                }
-                div.modal {
-                    position: absolute;
-                    left: 0;
-                    width: 60rem;
-                    height: 30rem;
-                    top: 10rem;
-                    background: $white;
-                    border: 1px solid $black;
-                }
             }
         }
     }
