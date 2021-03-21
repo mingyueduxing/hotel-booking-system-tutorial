@@ -1,0 +1,7 @@
+const actionTypes = {
+    LOAD_HOTEL_REQUESTED: "LOAD_HOTEL_REQUESTED",
+    LOAD_HOTEL_SUCCEEDED: "LOAD_HOTEL_SUCCEEDED",
+    LOAD_HOTEL_FAILED: "LOAD_HOTEL_FAILED",
+}
+
+export default actionTypes

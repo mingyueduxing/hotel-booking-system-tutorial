@@ -1,20 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Rooms from './components/Rooms'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { loadHotel } from './state/hotel/actions'
+
 import './styles/index.scss'
 
-function App() {
-  const [hotel, setHotel] = useState({})
-  useEffect(() => {
-    fetch('http://localhost:3000/api/hotel')
-      .then(response => response.json())
-      .then(data => setHotel(data))
-  }, [])
+function App({ loading, loadHotel }) {
+  useEffect(loadHotel, [])
 
-  if (!hotel) return <h1>...Loading</h1>
+  if (loading) return <h1>...Loading</h1>
 
   return (
     <Router>
@@ -25,5 +23,16 @@ function App() {
     </Router>
   );
 }
+const mapStateToProps = (state) => {
+  const { hotel: { hotel: { loading, error } } } = state
+  return {
+    loading,
+    error
+  }
+}
 
-export default App;
+const mapActionsToProps = {
+  loadHotel,
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(App);
