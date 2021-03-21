@@ -10,7 +10,7 @@ import { loadHotel } from './state/hotel/actions'
 import './styles/index.scss'
 
 function App({ loading, loadHotel }) {
-  useEffect(loadHotel, [])
+  useEffect(loadHotel)
 
   if (loading) return <h1>...Loading</h1>
 

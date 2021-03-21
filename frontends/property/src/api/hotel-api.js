@@ -1,1 +1,1 @@
-export const fetchHotel = () => fetch('http://localhost:3000/api/hotel').then(data => data.json())
+export const fetchHotel = () => fetch(`${process.env.REACT_APP_API_URL}/api/hotel`).then(data => data.json())

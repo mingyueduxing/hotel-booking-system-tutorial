@@ -1,29 +1,78 @@
+import { useState } from "react"
+import { connect } from 'react-redux'
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
 
-const Carousel = () => {
-    const [images, setImages] = useState([])
+const Carousel = ({ images, loading, error }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-    useEffect(() => {
-        fetch('http://localhost:3000/api/images/type/hotel')
-            .then(data => data.json())
-            .then(data => setImages(data))
-    }, [])
+    const prev = () => {
+        if (currentImageIndex > 0) {
+            setCurrentImageIndex(currentImageIndex - 1)
+        }
+    }
 
-    if (!images) return <h1>...Loading</h1>
+    const next = () => {
+        if (currentImageIndex < images.length - 1) {
+            console.log(currentImageIndex)
+            setCurrentImageIndex(currentImageIndex + 1)
+        }
+    }
+
+    const isPrevDisabled = () => {
+        return currentImageIndex === 0
+    }
+
+    const isNextDisabled = () => {
+        return currentImageIndex === images.length - 1
+    }
+
+    if (loading) return <h1>...Loading</h1>
+    if (error) return <h1>...Something wrong happend</h1>
 
     return <section className="carousel">
         <ul>
-            {images.map((image, index) => (index === currentImageIndex && <li key={image.id}><img src={image.url} alt='hotel banner images' /></li>))}
+            {images.map((image, index) => (
+                index === currentImageIndex &&
+                <li key={image.id}>
+                    <img src={image.url} alt='hotel banner images' />
+                </li>
+            ))}
         </ul>
         <ul>
-            {images.map((image, index) => <li key={image.id} onClick={() => setCurrentImageIndex(index)}></li>)}
+            {images.map((image, index) => (
+                <li key={image.id}
+                    className={index === currentImageIndex ? 'active' : ''}
+                    onClick={() => setCurrentImageIndex(index)} />
+            ))}
         </ul>
-        <FontAwesomeIcon icon={faChevronLeft} />
-        <FontAwesomeIcon icon={faChevronRight} />
+        <ul>
+            <li>
+                <FontAwesomeIcon
+                className={isPrevDisabled() ? 'disabled': ''}
+                    icon={faChevronLeft}
+                    onClick={prev} />
+            </li>
+            <li>
+                <FontAwesomeIcon
+                    className={isNextDisabled() ? 'disabled': ''}
+                    icon={faChevronRight}
+                    onClick={next} />
+            </li>
+        </ul>
     </section>
 }
 
-export default Carousel
+const mapStateToProps = (state) => {
+    const { images: { loading, images, error } } = state
+    const hotelImages = images.filter(image => image.type === 'hotel')
+    return {
+        loading,
+        error,
+        images: hotelImages
+    }
+}
+
+const mapActionsToProps = {}
+
+export default connect(mapStateToProps, mapActionsToProps)(Carousel)
