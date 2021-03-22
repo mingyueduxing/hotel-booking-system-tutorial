@@ -1,41 +1,43 @@
 @import './variables.scss';
 
-.calendar-list {
+.calendar {
+    margin: 2rem;
+
     &__header {
-        padding: 1rem 0;
-        text-transform: uppercase;
+        margin: 2rem 0;
+        padding: 1rem;
         background: $grey-color;
+
         ul {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            li {
-                border-right: none;
-                svg {
-                    margin: 0 1rem;
-                }
-                cursor: pointer;
-            }
+            justify-content: space-between;
         }
     }
 
     &__content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            width: 36rem;
+            min-width: 36rem;
 
-        div.calendar {
-            &:first-child {
-                border-right: 1px solid lightgrey;
+            flex-wrap: wrap;
+            li {
+                width: 3rem;
+                height: 1rem;
+                padding: 1rem;
+                cursor: pointer;
+
+                &.current {
+                    background: $black;
+                    color: $white;
+                }
             }
 
-            ul {
-                display: flex;
-                flex-direction: row;
+            &:last-child {
                 li {
-                    margin: 1rem;
-                    text-transform: uppercase;
+                    border: 1px solid $grey-color;
                 }
             }
         }
