@@ -15,7 +15,7 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
       id: uuidv4(),
       username: 'admin',
-      password: '123456',
+      password: '$2b$10$S4vJISKu1emRjcGQIfYhteFdblMWCJ.gXgYayBlmNBsoENUuT46yu', //encoded password for 123456
       role: 'admin',
       createdAt: '2020-01-01',
       updatedAt: '2020-01-01'

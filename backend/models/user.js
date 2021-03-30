@@ -28,16 +28,15 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
     hooks: {
-      beforeCreate: (user) => {
-        const salt = bcrypt.genSaltSync()
-        user.password = bcrypt.hashSync(user.password, salt)
+      beforeCreate: async (user) => {
+        user.password = await bcrypt.hash(user.password, 10)
         user.id = uuidv4()
       }
     }
   });
 
-  User.prototype.validatePassword = (password, encrypted) => {
-    return bcrypt.compareSync(password, encrypted)
+  User.prototype.validatePassword = async (password, encrypted) => {
+    return await bcrypt.compare(password, encrypted)
   };
 
   return User;
