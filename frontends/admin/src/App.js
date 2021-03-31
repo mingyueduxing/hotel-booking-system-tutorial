@@ -1,8 +1,15 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Login from './components/Login'
+import Dashboard from './components/Dashboard'
+
 import './styles/index.scss'
 
 function App() {
   return (
-    <h1>hotel admin ui</h1>
+    <Router >
+      <Route path="/" exact component={Login} />
+      <Route path="/dashboard" exact component={Dashboard} />
+    </Router>
   );
 }
 

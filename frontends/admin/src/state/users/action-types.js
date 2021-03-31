@@ -1,0 +1,7 @@
+const actionTypes = {
+    LOAD_USERS_REQUESTED: "LOAD_USERS_REQUESTED",
+    LOAD_USERS_SUCCEEDED: "LOAD_USERS_SUCCEEDED",
+    LOAD_USERS_FAILED: "LOAD_USERS_FAILED",
+}
+
+export default actionTypes
